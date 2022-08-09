@@ -61,16 +61,17 @@ def print_second_data():
 
 def print_parents_data():
     with open('parents_Table.csv', 'r', encoding='UTF-8') as file:
-        data_first_par = file.readlines()
-        data_first_version_second_par = []
+        data_parents = file.readlines()
+        data = []
         j = 0
-        for i in range(len(data_first_par)):
-            if data_first_par[i] == '\n' or i == len(data_first_par) - 1:
-                data_first_version_second_par.append(''.join(data_first_par[j:i + 1]))
+        for i in range(len(data_parents)):
+            if data_parents[i] == '\n' or i == len(data_parents) - 1:
+                data.append(''.join(data_parents[j:i + 1]))
                 j = i
-        data_first_par = data_first_version_second_par
-        print(''.join(data_first_par))
-    return data_first_par
+        data_parents = data
+
+        print(''.join(data_parents))
+    return data_parents
 
 
 def put_data():
